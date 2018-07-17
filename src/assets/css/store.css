@@ -1,0 +1,62 @@
+.arrow-right {
+  display: inline-block;
+  border-top: 1px solid #a5a5a5;
+  border-right: 1px solid #a5a5a5;
+  width: .15rem;
+  height: .15rem;
+  transform: rotate(45deg);
+}
+.font-20 {
+  font-size: 0.2rem;
+}
+.font-24 {
+  font-size: 0.24rem;
+}
+.font-26 {
+  font-size: 0.26rem;
+}
+.font-28 {
+  font-size: 0.28rem;
+}
+.font-30 {
+  font-size: 0.3rem;
+}
+.font-32 {
+  font-size: 0.32rem;
+}
+.font-34 {
+  font-size: 0.34rem;
+}
+.font-36 {
+  font-size: 0.36rem;
+}
+.font-94 {
+  font-size: 0.94rem;
+}
+.color-444 {
+  color: #444444;
+}
+.color-a5a {
+  color: #a5a5a5;
+}
+.color-f3f {
+  color: #f3f3f3;
+}
+.color-fff {
+  color: #fff;
+}
+.color-479 {
+  color: #479dfc;
+}
+.color-ccc {
+  color: #ccc;
+}
+.color-f8b {
+  color: #f8bf44;
+}
+.color-fe5 {
+  color: #fe5842;
+}
+.bgc-gradual {
+  background: linear-gradient(to right, #fe4854, #ff6d2c);
+}
