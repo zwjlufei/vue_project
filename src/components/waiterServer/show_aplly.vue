@@ -1,8 +1,8 @@
 <!--月嫂秀报名-->
 <template>
     <div>
-        <div class="container-z">
         <div :class="{'dim':maskShow}">
+        <div class="container-z">
         <!--头部bannge-->
         <div class="banner-box">
             <div class="banner-rim">
@@ -29,7 +29,6 @@
                 </div>
                 <div>{{activeInfo.active_address}}</div>
             </div>
-        </div>
         </div>
         </div>
         <div class="module-wall"></div>
@@ -64,7 +63,7 @@
 
         <div class="aplly-btn" @click="goApply">参与本期报名</div>
 
-
+        </div>
         <!--遮罩-->
         <div class="mask-box" v-show="maskShow" @touchmove.prevent>
             <div class="mask-box-bg"></div>
@@ -111,7 +110,7 @@
                 maskShow:false,
                 isSuccess:false,
                 activeInfo:{},
-                user_id:{},
+                openId:{},
                 phonelable:false,
                 namelable:false
             }
@@ -119,15 +118,8 @@
         mounted:function(){
             Indicator.open();
             var id = this.$route.query.id;
-            var openId = this.$route.query.openid;
-            user_status()
-                .then(res=>{
-                    this.user_id = res;
-                })
-                .catch(openid=>{
-                    console.log('不是会员')
-                })
-          this.getActive(id,openId);
+            this.openId = this.$route.query.openid;
+            this.getActive(id);
         },
         methods:{
             goApply:function () {
@@ -164,7 +156,7 @@
                     var c_token = res.name
                     var data = {
                         active_id:this.activeInfo.id,
-                        openid:this.user_id.openid,
+                        openid:this.openId,
                         phone:phone,
                         name:name
                     }
@@ -192,12 +184,12 @@
             closeMask:function () {
                 this.maskShow=false;
             },
-            getActive:function (id,openId) {
+            getActive:function (id) {
                 var that = this;
                 this.$http(`${this.URL}/jmember/activeApply`,{
                     params:{
                         id:id,
-                        openid:openId
+                        openid:this.openId
                     }
                 })
                     .then(function (response) {

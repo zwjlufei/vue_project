@@ -8,9 +8,7 @@ import Mint from 'mint-ui';
 import 'mint-ui/lib/style.css';
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import 'swiper/dist/css/swiper.css'
-import VueScroller from 'vue-scroller'
 import qs from 'qs'
-Vue.use(VueScroller)
 Vue.prototype.$qs = qs
 
 Vue.use(Mint);

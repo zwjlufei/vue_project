@@ -105,31 +105,15 @@
             </div>
             <swiper :options="swiperOption" class="my-swiper fu-meal-wrap">
                 <swiper-slide v-for="(mealItem,index) in mealData" :key="index">
-                   <div class="mead-titles">42天呵护套餐</div>
+                   <div class="mead-titles">{{mealItem.title}}</div>
                     <ul>
-                        <li>
-                            <div class="meal-item-left">42天护理服务</div>
-                            <div>20677元</div>
-                        </li>
-                        <li>
-                            <div class="meal-item-left">中医体质调养</div>
-                            <div>19999元</div>
-                        </li>
-                        <li>
-                            <div class="meal-item-left">全程营养指导</div>
-                            <div>300元</div>
-                        </li>
-                        <li>
-                            <div class="meal-item-left">2次母乳指导</div>
-                            <div>698元x2次</div>
-                        </li>
-                        <li>
-                            <div class="meal-item-left">42天护理服务</div>
-                            <div>698元x3次</div>
+                        <li v-for="item in mealItem.content">
+                            <div class="meal-item-left">{{item.name}}</div>
+                            <div>{{item.price}}</div>
                         </li>
                     </ul>
-                    <div class="price-btn">仅需24800元</div>
-                    <div class="old-price">原价26665元</div>
+                    <div class="price-btn">仅需{{mealItem.new_price}}元</div>
+                    <div class="old-price">原价{{mealItem.old_price}}元</div>
                 </swiper-slide>
             </swiper>
         </div>
@@ -247,7 +231,56 @@
                     {img:"http://cdn.ayi800.com/image/png/wx_waple_service_item3icon3@2x.png",title:'三大保障，全程护航',content:'试工、保险，更首创保证金制度多重手段保障 您的权益不受侵害！'},
                     {img:"http://cdn.ayi800.com/image/png/wx_waple_service_item4icon4@2x.png",title:'智能督导，确保无虞',content:'独创智能管控系统，全程监督，全程保证上户 品质和突发问题处理。'}
                 ],
-                mealData:[1,2,3,4,5]
+                mealData:[
+                    {
+                        title:'42天呵护套餐',
+                        content:[
+                            {name:'42天护理服务',price:'20677天'},
+                            {name:'中医体质调养',price:'19999元'},
+                            {name:'全程营养指导',price:'300元'},
+                            {name:'2次母乳指导',price:'698元x2次'},
+                            {name:'42天护理服务',price:'698元x3次'}
+                        ],
+                        new_price:24800,
+                        old_price:16665
+                    },
+                    {
+                        title:'26天呵护套餐',
+                        content:[
+                            {name:'42天护理服务',price:'20677天'},
+                            {name:'中医体质调养',price:'19999元'},
+                            {name:'全程营养指导',price:'300元'},
+                            {name:'2次母乳指导',price:'698元x2次'},
+                            {name:'42天护理服务',price:'698元x3次'}
+                        ],
+                        new_price:24800,
+                        old_price:36665
+                    },
+                    {
+                        title:'42天呵护套餐',
+                        content:[
+                            {name:'42天护理服务',price:'20677天'},
+                            {name:'中医体质调养',price:'19999元'},
+                            {name:'全程营养指导',price:'300元'},
+                            {name:'2次母乳指导',price:'698元x2次'},
+                            {name:'42天护理服务',price:'698元x3次'}
+                        ],
+                        new_price:24800,
+                        old_price:26665
+                    },
+                    {
+                        title:'42天呵护套餐',
+                        content:[
+                            {name:'42天护理服务',price:'20677天'},
+                            {name:'中医体质调养',price:'19999元'},
+                            {name:'全程营养指导',price:'300元'},
+                            {name:'2次母乳指导',price:'698元x2次'},
+                            {name:'42天护理服务',price:'698元x3次'}
+                        ],
+                        new_price:24800,
+                        old_price:26665
+                    }
+                ]
             }
         },
         components: {
